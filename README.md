@@ -25,3 +25,15 @@ roslaunch xsens_mti_driver xsens_mti_node.launch
 ## Hikrobot camera
 Check [this](https://github.com/LarryDong/HIKROBOT-MVS-CAMERA-ROS)
 
+
+## Calibration Process.
+Data needed:
+1. Static-IMU data. For 2-3 hours. Name: static_imu.bag
+2. Camera moving before a apriltag data. (Can use the same as 3's)
+3. Camera & IMU moving before a apriltag data.
+
+Process   
+1. IMU intrinsics calibration. Using `allan_variance_ros`
+2. Camera intrinsics calibraion. Using Kalibr (No conda environment)
+3. Extrinsics calibration. Using Kalibr.
+
