@@ -37,3 +37,20 @@ Process
 2. Camera intrinsics calibraion. Using Kalibr (No conda environment)
 3. Extrinsics calibration. Using Kalibr.
 
+
+Command line codes.
+```bash
+# calib camera
+rosrun kalibr kalibr_calibrate_cameras \
+    --bag /home/larrydong/tank_ws/data/camera.bag \
+    --topics /image \
+    --models pinhole-radtan \
+    --target /home/larrydong/tank_ws/src/hikcam_xsens_platform/configs/aprilgrid.yaml
+
+# calib IMU-Cam
+rosrun kalibr kalibr_calibrate_imu_camera \
+	--bag /home/larrydong/tank_ws/data/vi_calib.bag \
+	--cam /home/larrydong/tank_ws/data/camera-camchain.yaml \
+	--imu /home/larrydong/tank_ws/src/hikcam_xsens_platform/configs/imu.yaml \
+	--target /home/larrydong/tank_ws/src/hikcam_xsens_platform/configs/aprilgrid.yaml
+```
